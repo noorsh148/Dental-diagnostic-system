@@ -12,7 +12,7 @@ def index():
 
 @app.route('/DentalAPI',methods=["TEETH_PREDICTION"])
 def upload():
-    if(request.method == "UPLOADIMAGE"):
+    if(request.method == "TEETH_PREDICTION"):
         imagefile = request.files['image']
         filename = werkzeug.utils.secure_filename(imagefile.filename)
         imagefile.save("./X-Ray-image/" + filename)
