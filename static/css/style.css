@@ -130,6 +130,7 @@ header .image-text .name {
 }
 
 header .image-text .profession {
+    
     font-size: 16px;
     margin-top: -2px;
     display: block;
@@ -142,8 +143,9 @@ header .image-text .profession {
 }
 
 .sidebar header .image img {
-    width: 40px;
-    border-radius: 6px;
+    color: #ff0000;
+    width: 70px;
+    border-radius: 10px;
 }
 
 .sidebar header .toggle {
@@ -195,6 +197,9 @@ body.dark .sidebar header .toggle {
     font-weight: 500;
     transition: var(--tran-05);
 }
+
+
+
 
 .sidebar li a {
     list-style: none;
@@ -343,16 +348,6 @@ body.dark .home .text {
     font-size: 20px;
 }
 
-#wrapper.dragover {
-    padding: 2%;
-    background-color:var(--body-color);
-}
-
-#wrapper.canvas {
-    background-color: white;
-    padding: 0;
-}
-
 #decorator {
     width: 70%;
     height: 70%; 
@@ -361,12 +356,6 @@ body.dark .home .text {
     flex-direction: column;
 }
 
-.imageContainer {
-    width: 70%;
-    height: 70%;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
 
 .center {
     display: flex;
@@ -379,12 +368,12 @@ body.dark .home .text {
 }
 
 .anim {
-    transition: all 0.2s ease;
+    transition: all 0.5s ease;
 }
 
 .icon {
-    font-size: 600%;
-    color: #92b0b3;
+    font-size: 300%;
+    color: var(--primary-color);
 }
 
 input {
@@ -401,6 +390,15 @@ strong:hover {
 
 
 /*================= canvas  ===================*/
+
+
+.veiw-port {
+    width: 70%;
+    height: 70%;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
 
 canvas{
     border:3px solid var(--primary-color);

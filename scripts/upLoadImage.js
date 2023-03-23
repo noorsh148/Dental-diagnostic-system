@@ -1,5 +1,3 @@
-
-
 window.addEventListener("dragover",function(e){
     e.preventDefault();
   },false);
@@ -26,9 +24,10 @@ window.addEventListener("dragover",function(e){
     var dt = eventArgs.dataTransfer;
     if (dt.items.length == 1) {
       if (dt.items[0].kind == "file") {
-        var reader = new FileReader();
-        reader.onload = readFile;
-        reader.readAsDataURL(dt.items[0].getAsFile());
+        var img = new Image();
+        img.onload = draw;
+        img.onerror = failed;
+        img.src = URL.createObjectURL(dt.items[0].getAsFile());
       }
     }
   }
@@ -38,7 +37,6 @@ window.addEventListener("dragover",function(e){
     img.onload = draw;
     img.onerror = failed;
     img.src = URL.createObjectURL(this.files[0]);
-    sourceImage = URL.createObjectURL(this.files[0]);
   }
 
   function draw() {
