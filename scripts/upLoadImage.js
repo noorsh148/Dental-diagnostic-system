@@ -43,10 +43,10 @@ window.addEventListener("dragover",function(e){
     document.getElementById("wrapper").style.display = "none";
     document.getElementById("target").style.display = "block";
     var canvas = document.querySelector('canvas');
-    canvas.width = this.width;
-    canvas.height = this.height;
+    canvas.width = 1200;
+    canvas.height = 650;
     var ctx = canvas.getContext('2d');
-    ctx.drawImage(this, 0,0);
+    ctx.drawImage(this, 0,0,1200,650);
   }
 
   function failed() {

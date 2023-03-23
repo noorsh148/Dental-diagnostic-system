@@ -393,8 +393,8 @@ strong:hover {
 
 
 .veiw-port {
-    width: 70%;
-    height: 70%;
+    /* width: 800px;
+    height: 400px; */
     background-repeat: no-repeat;
     background-size: contain;
 }
