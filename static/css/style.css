@@ -398,3 +398,11 @@ label {
 strong:hover {
     color: var(--primary-color);
 }
+
+
+/*================= canvas  ===================*/
+
+canvas{
+    border:3px solid var(--primary-color);
+    margin: 20px;
+}

@@ -6,8 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return "Dental-API"
-
+    return render_template('Documentation.html')
 
 
 @app.route('/DentalAPI',methods=["TEETH_PREDICTION"])
@@ -18,7 +17,7 @@ def upload():
         imagefile.save("./X-Ray-image/" + filename)
         #TODO prediction = CoolStuff(imageFile)
         os.remove("./X-Ray-image/" + filename);
-        # return jsonify({"predictionResult":prediction})
+        return jsonify({"predictionResult":"prediction"})
 
 
 if __name__ == "__main__":
