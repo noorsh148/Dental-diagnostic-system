@@ -12,7 +12,7 @@
     <!----===== Boxicons CSS ===== -->
     <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
 
-    <!--<title>Dashboard Sidebar Menu</title>-->
+    !--<title>Dental diagnostic system</title>
 </head>
 
 <body>
@@ -114,12 +114,25 @@
 
     </nav>
 
+    
+
     <section class="home">
         <div class="text">Dashboard Sidebar</div>
+
+        <div id="wrapper" class="center anim">
+            <div id="decorator" class="border anim center">
+              <input id="upload" type="file">
+              <label for="upload"><strong>Choose a file</strong> or drag it here.</label>
+            </div>
+          </div>
+          <div id="target" class="imageContainer"></div>
     </section>
 
-    <script src="/scripts/controler.js"></script>
+    
+
+    
 
 </body>
-
+<script src="/scripts/controler.js" ></script>
+<script src="/scripts/upLoadImage.js" ></script>
 </html>
