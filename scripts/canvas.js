@@ -1,3 +1,13 @@
+var molarColor = "#FF6075";
+var premolorColor = "#7CFF7E";
+var caninieColor = "#FFFD7C";
+var incisorColor = "#49E9FF";
+
+var crownBridge = "#dc00ff";
+var filling = "#ff0000";
+var implant = "#e9ff00";
+var rootCanalObturation = "#00ff2e";
+
 var context = canvas.getContext("2d");
 
 var mouse = {
@@ -19,35 +29,56 @@ function animate() {
   predictions.forEach((boundingBox) => {
     centerX = boundingBox["x"];
     centerY = boundingBox["y"];
-
     x = centerX - boundingBox["width"] / 2;
     y = centerY - boundingBox["height"] / 2;
-
     width = boundingBox["width"];
     height = boundingBox["height"];
-
     confidence = boundingBox["confidence"];
     classType = boundingBox["class"];
 
-    var dis = Math.sqrt(
+    var distance = Math.sqrt(
       Math.pow(mouse.x - centerX, 2) + Math.pow(mouse.y - centerY, 2)
     );
 
-    if (dis <= 30) {
+    boxColor(classType);
+    if (distance <= 30) {
       context.beginPath();
       context.lineWidth = "1";
-      context.strokeStyle = "rgba(0, 255, 206,1)";
       context.rect(x - 3, y - 3, width + 6, height + 6);
       context.stroke();
 
-      context.font = "10px Arial ";
-      context.fillText(classType, centerX, centerY);
+      context.fillStyle = "#ffffff";
+      context.font = "14px Arial ";
+      context.fillText(classType, x - 5, y - 5);
     } else {
       context.beginPath();
       context.lineWidth = "1";
-      context.strokeStyle = "rgba(0, 255, 206,1)";
       context.rect(x, y, width, height);
       context.stroke();
     }
   });
+}
+
+function boxColor(classType) {
+  if (classType[1] == "1" || classType[1] == "2") {
+    context.strokeStyle = incisorColor;
+  } else if (classType[1] == "3") {
+    context.strokeStyle = caninieColor;
+  } else if (classType[1] == "4" || classType[1] == "5") {
+    context.strokeStyle = premolorColor;
+  } else if (
+    classType[1] == "6" ||
+    classType[1] == "7" ||
+    classType[1] == "8"
+  ) {
+    context.strokeStyle = molarColor;
+  } else if (classType == "Crown - bridge") {
+    context.strokeStyle = crownBridge;
+  } else if (classType == "Filling") {
+    context.strokeStyle = filling;
+  } else if (classType == "Implant") {
+    context.strokeStyle = implant;
+  } else if (classType == "Root Canal Obturation") {
+    context.strokeStyle = rootCanalObturation;
+  }
 }
