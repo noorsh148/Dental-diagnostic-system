@@ -1,3 +1,4 @@
+var sidebar = document.querySelector("nav");
 var leftSidebarToggle = document.querySelector(".toggle");
 var searchButton = document.querySelector(".search-box");
 var modeToggle = document.querySelector(".toggle-switch");
